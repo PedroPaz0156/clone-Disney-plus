@@ -1,5 +1,57 @@
-$bgColor: #ccc;
+//Importações
+@use 'hero';
+@use 'variaveis';
+
+//Mixins
+@mixin text($fontSize: 16px) { 
+    font-size: $fontSize;
+    line-height: $fontSize + 10px;
+    color: variaveis.$corTextoPrincipal;
+}
+
+@mixin title($fontSize: 40px) { 
+    @include text($fontSize);
+    color: variaveis.$corTextoSecundario;
+}
+
+//Estilos
+* { 
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 
 body { 
-    background-color: $bgColor;
+    background-color: variaveis.$corFundo;
 }
+
+.text { 
+    @include text;
+
+    &--big { 
+        @include text(18px);
+    }
+
+    &--small { 
+        @include text(12px);
+    }
+}
+
+.title { 
+    @include title;
+
+    &--small { 
+        @include title(28px);
+    }
+
+    &--big { 
+        @include title(44px);
+    }
+}
+
+.link-text  {
+    @include text(18px);
+    color:#f9f9f9;
+    text-decoration: underline;
+}
+
