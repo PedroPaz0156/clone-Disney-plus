@@ -2,11 +2,11 @@ document.addEventListener('DOMContentLoaded', function() {
     const buttons = document.querySelectorAll('[data-tab-button]');
     const questions = document.querySelectorAll('[data-faq-question');
 
-    const heroSection = document.querySelector('hero');
+    const heroSection = document.querySelector('.hero');
     const heroHeight = heroSection.clientHeight;
 
     window.addEventListener('scroll', function() { 
-        const scrollPosition = this.window.scrollY;
+        const scrollPosition = window.scrollY;
 
         if(scrollPosition < heroHeight) { 
             hideHeaderElements();

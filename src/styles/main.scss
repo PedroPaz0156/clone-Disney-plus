@@ -46,25 +46,49 @@ body {
 
 .text { 
     @include text;
+    
+    @media (max-width: 768px) { 
+        @include text(14px);
+    }
 
     &--big { 
         @include text(18px);
+
+        @media (max-width: 768px) { 
+            @include text(15px);
+        }
     }
 
     &--small { 
         @include text(12px);
+
+        @media (max-width: 768px) { 
+            @include text(11px);
+        }
     }
 }
 
 .title { 
     @include title;
 
+    @media (max-width: 768px) { 
+        @include title(24px)
+    }
+
     &--small { 
         @include title(28px);
+
+        @media (max-width: 768px) { 
+            @include title(22px);
+        }
     }
 
     &--big { 
         @include title(44px);
+
+        @media (max-width: 768px) { 
+            @include title(26px);
+        }
     }
 }
 
@@ -115,11 +139,14 @@ body {
 }
 
 .image-text-section  { 
-
     padding: 5.6vw;
     display: grid;
     grid-template-columns: 1fr 1fr;
     align-items: center;
+
+    @media (max-width: 768px) { 
+        display: block;
+    }
 
     &__text_container{ 
         padding: 0 2vw;
@@ -150,6 +177,12 @@ body {
             display: flex;
             flex-direction: column;
             justify-content: center;
+
+            @media (max-width: 768px) { 
+                position: relative;
+                left: 0;
+                width: 100%;
+            }
         }
     }
 }
